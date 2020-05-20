@@ -1,3 +1,13 @@
+
+
+
+// NOT:
+// 206. satirda add mouse ne yaptiysam duzelmedi surekli binlerce hata verdi
+// NOT:
+
+
+
+
 import java.awt.GridLayout;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -156,13 +166,13 @@ public class OyunEkrani extends javax.swing.JFrame implements MouseListener{
         
            
             
-        
- 
-       
+        try { 
         a=Integer.parseInt(jTextField1.getText()); //genislik
         b=Integer.parseInt(jTextField2.getText()); //yukseklik
         
         OyunEkrani1();
+        } catch (Exception e) {
+        }
        
     }
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
@@ -186,10 +196,10 @@ public class OyunEkrani extends javax.swing.JFrame implements MouseListener{
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		
-		frame.setLayout(new GridLayout(b,a));
+		frame.setLayout(new GridLayout(b,a)); 
 		
 		
-		
+	    
 		for(int satir = 0; satir < board.length; satir++) {
 			for(int sutun = 0; sutun < board[0].length; sutun++) {
 			        Yer y = new Yer(satir, sutun);
